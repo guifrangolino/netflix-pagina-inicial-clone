@@ -10,6 +10,9 @@ main
     position: relative
     border-bottom: 7px solid variables.$faq-border-color
 
+    @include base-mixins.tela-mobile
+        height: 500px
+
 .main
     color: variables.$font-color
     display: flex
@@ -25,7 +28,7 @@ main
     text-align: center
 
     @include base-mixins.tela-mobile
-        padding: 4.688rem 1.8rem
+        padding: 4.688rem 1rem
 
     &-h2
         font-size: 4rem
