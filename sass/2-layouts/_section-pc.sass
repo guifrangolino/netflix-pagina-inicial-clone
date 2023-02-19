@@ -1,0 +1,40 @@
+@use '../1-base/variables'
+@use 'layout-mixins'
+@use '../1-base/base-mixins'
+
+.section-pc
+    @include layout-mixins.section-position
+
+
+    &-container
+        @include layout-mixins.section-position-container
+        flex-direction: row-reverse
+
+        &-texto
+            @include layout-mixins.section-position-texto
+            padding-left: 1.5rem
+
+            @include base-mixins.tela-p
+                padding-left: 0
+
+        &-img
+            width: 48%
+            position: relative
+            right: 2rem
+
+            @include base-mixins.tela-p
+                width: 75%
+                right: 0
+
+            img
+                max-width: -webkit-fill-available
+                position: relative
+                z-index: 1
+
+            video
+                position: absolute
+                max-width: 63%
+                max-height: 54%
+                top: 32%
+                left: 50%
+                transform: translate(-50%, -50%)

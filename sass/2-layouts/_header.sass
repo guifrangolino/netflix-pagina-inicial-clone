@@ -1,0 +1,43 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'sass:color'
+
+header
+    display: flex
+    align-items: center
+    justify-content: center
+
+.header
+    max-width: 1920px
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 1.6rem 3.5rem
+    padding: 0 3.5rem
+    position: absolute
+    top: 0
+    z-index: 2
+
+    @include base-mixins.tela-p
+        padding: 0 1rem
+
+    &-logo
+        @include base-mixins.tela-p
+            width: 108px
+
+    &-nav
+        
+        &-btn-entrar
+            color: variables.$font-color
+            background-color: variables.$btn-color
+            padding: 0.563rem 1.0625rem
+            font-weight: 500
+            border-radius: 3px
+
+            &:hover
+                background-color: color.adjust(variables.$btn-color, $lightness: 5%)
+
+            @include base-mixins.tela-mobile
+                font-size: .9rem
+                padding: 0.25rem 0.5rem

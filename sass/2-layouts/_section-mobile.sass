@@ -1,0 +1,89 @@
+@use '../1-base/variables'
+@use 'layout-mixins'
+@use '../1-base/base-mixins'
+
+.section-mobile
+    @include layout-mixins.section-position
+
+
+    &-container
+        @include layout-mixins.section-position-container
+        flex-direction: row-reverse
+
+        &-texto
+            @include layout-mixins.section-position-texto
+            padding-left: 3rem
+
+            @include base-mixins.tela-p
+                padding-left: 0
+
+        &-img
+            width: 48%
+            position: relative
+            right: 4rem
+
+            @include base-mixins.tela-p
+                width: 75%
+                right: 0
+
+            img
+                max-width: -webkit-fill-available
+                position: relative
+                z-index: 1
+        
+        .download-animation
+            border: 2px solid variables.$faq-border-color
+            background-color: variables.$bg-color
+            box-shadow: 0 0 2em 0 variables.$bg-color
+            display: flex
+            justify-content: space-between
+            align-items: center
+            min-width: 15rem
+            width: 65%
+            padding: .5rem .75rem
+            border-radius: .75rem
+            position: absolute
+            z-index: 1
+            bottom: 47px
+            left: 50%
+            transform: translateX(-50%)
+
+            @include base-mixins.tela-p
+                bottom: 0
+                min-width: 14rem
+                width: 65%
+                height: 25%
+
+            img
+                height: 5rem
+                margin-right: 1rem
+
+                @include base-mixins.tela-p
+                    height: 100%
+
+                &:nth-of-type(2)
+                    height: 3rem
+
+                    @include base-mixins.tela-p
+                        height: 100%
+            
+            &-texto
+                display: flex
+                flex-direction: column
+                text-align: center
+
+                p:first-of-type
+                    font-size: 1rem
+                    font-weight: 600
+                    text-align: left
+                    margin-bottom: .1rem
+
+                    @include base-mixins.tela-mobile
+                        font-size: .9rem
+
+                p:last-of-type
+                    font-size: .9rem
+                    color: #0071eb
+
+                    @include base-mixins.tela-mobile
+                        font-size: .5rem

@@ -1,0 +1,37 @@
+@use '../1-base/variables'
+@use 'layout-mixins'
+@use '../1-base/base-mixins'
+
+.section-tv
+    @include layout-mixins.section-position
+    padding: 2.375rem 2.813rem
+
+
+    &-container
+        @include layout-mixins.section-position-container
+
+        &-texto
+            @include layout-mixins.section-position-texto
+
+        &-img
+            width: 100%
+            position: relative
+            left: 2rem
+
+            @include base-mixins.tela-p
+                width: 75%
+                left: 0
+
+            img
+                max-width: -webkit-fill-available
+                position: relative
+                z-index: 1
+                max-width: 100%
+
+            video
+                position: absolute
+                max-width: 73%
+                max-height: 54%
+                top: 47%
+                left: 50%
+                transform: translate(-50%, -50%)

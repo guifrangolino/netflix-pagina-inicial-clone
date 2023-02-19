@@ -1,0 +1,66 @@
+@use '../1-base/variables'
+@use 'layout-mixins'
+@use '../1-base/base-mixins'
+
+.section-faq
+    @include layout-mixins.section-position
+    @include base-mixins.tela-mobile
+        padding: 4.375rem 0
+
+    &-container
+        @include layout-mixins.section-position-container
+        flex-direction: column
+        @include layout-mixins.section-position-texto
+
+        &-list
+            margin: 3rem auto
+            max-width: 815px
+            width: 75%
+            font-size: 1.625rem
+
+            @include base-mixins.tela-p
+                font-size: 1.25rem
+                margin: 1.5rem auto
+                width: 90%
+
+            @include base-mixins.tela-mobile
+                width: 100%
+
+            &-question
+                border-bottom: 1px solid variables.$bg-color
+                background-color: variables.$faq-border-color
+                padding: 0.8em 1.2em 0.8em 1.2em
+                display: flex
+                align-items: center
+                justify-content: space-between
+                cursor: pointer
+
+                svg
+                    transform: rotate(45deg)
+                    transition: .1s
+
+                    @include base-mixins.tela-p
+                        width: 16px
+
+            &-answer
+                margin-bottom: .5rem
+                background-color: variables.$faq-border-color
+                max-height: 0
+                overflow: hidden
+                transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1)
+
+                div
+                    padding: 1.2em
+
+            .ativo
+                max-height: 1200px
+
+                svg
+                    transform: rotate(0)
+                    padding: 0
+
+    form
+        @include base-mixins.tela-mobile
+            padding-left: 1.25rem
+            padding-right: 1.25rem
+

@@ -1,0 +1,47 @@
+@use '../1-base/variables'
+@use 'layout-mixins'
+@use '../1-base/base-mixins'
+
+.footer
+    background-color: variables.$bg-color
+
+    &-container
+        color: variables.$label-color
+        font-size: .9rem
+        margin: 0 auto
+        max-width: 1000px
+        padding: 4.375rem 2.813rem 2.375rem 2.813rem
+
+    &-top
+        padding-bottom: 1.875rem
+        font-size: 1rem
+
+        a
+            color: variables.$label-color
+
+            &:hover
+                text-decoration: underline
+
+    &-links
+
+        &-link
+            font-size: .8rem
+            display: inline-block
+            list-style: none
+            width: 24%
+            margin-bottom: 1rem
+
+            @include base-mixins.tela-p
+                width: 32%
+            
+            @include base-mixins.tela-mobile
+                width: 49%
+
+            a
+                color: variables.$label-color
+
+                &:hover
+                    text-decoration: underline
+    
+    &-bottom
+        margin-top: 1.5rem
